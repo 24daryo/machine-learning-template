@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # サービスは複数設定できる.今回はpythonのみ
+  python3: # <= dokecr compose exec ~~ bash に該当する
+    
+    # 名称設定
+    image: development-python:1.0
+    container_name: 'machine-learning'
+    
+    # build時のDockerfileの指定
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # ファイルのコピー
+    volumes:
+      - ./src:/root
+    working_dir: '/root'
+
+    # その他
+    restart: always
+    tty: true
+    
+
+
+# いわゆる全体の手順書です.各サービスのbuild内容が各Dockerfileに該当します
