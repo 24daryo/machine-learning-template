@@ -1,4 +1,4 @@
-# template-python-docker
+# machine-learning-template
 
 ### コマンド
 ```shell
